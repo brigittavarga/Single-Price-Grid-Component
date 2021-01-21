@@ -1,0 +1,193 @@
+/* 
+Body background: #e6eff6
+Dark-green: #2bb3b1
+Light-green: #4abebd
+Green: #bfdf32
+Grey: #AAADB6
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@keyframes pulse {
+	25% {
+		transform: scale(1.1);
+	}
+
+	75% {
+		transform: scale(.9);
+	}
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e6eff6;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+}
+
+a {
+    text-decoration: none;
+    color: #AAADB6;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+.container {
+    width: 50vw;
+    text-align: left;
+    display: grid;
+    grid-template-areas: 
+    "card-1 card-1"
+    "card-2 card-3";
+}
+
+section {
+    padding: 45px;
+}
+
+section.card-1 {
+    background-color: #fff;
+    grid-area: card-1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+section.card-2 {
+    background-color: #2bb3b1;
+    grid-area: card-2;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section.card-1 h1 {
+    color:#4abebd;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0 0 20px 0;
+}
+
+section.card-1 h2 {
+    color:#bfdf32;
+    margin: 0 0 10px 0;
+}
+
+section.card-1 p {
+    color: #AAADB6;
+    line-height: 1.6;
+}
+
+section.card-2,
+section.card-3 {
+    color: #fff;
+}
+
+section.card-3 {
+    background-color:#4abebd;
+    grid-area: card-3;
+    border-bottom-right-radius: 10px;
+}
+
+section.card-3 ul {
+    list-style: none;
+    font-size: 0.9rem;
+    font-weight: 200;
+}
+
+section.card-3 ul li {
+    margin-bottom: 5px;
+}
+
+section.card-3 h2 {
+    margin-bottom: 20px;
+}
+
+section .price {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 10px 0 0;
+}
+
+button {
+    display: inline-block;
+    background-color: #bfdf32;
+    font-family: "Raleway", sans-serif;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    outline: none;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+button:hover {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    cursor: pointer;
+}
+
+footer {
+    font-size: .8rem;
+    color: #AAADB6;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 20px 0 20px 0;
+        width: 80vw;
+        grid-template-areas: 
+        "card-1"
+        "card-2"
+        "card-3"
+    }
+
+    section {
+        margin-bottom: 10px;
+    }
+
+    section.card-2 {
+        border-bottom-left-radius: 0px;
+    }
+
+    section.card-2 h2 {
+        margin-bottom: 10px;
+    }
+
+    section.card-2 p {
+        margin-top: 10px;
+    }
+
+    section.card-3 {
+        border-bottom-left-radius: 10px;
+    }
+}
